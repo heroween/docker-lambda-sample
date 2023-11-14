@@ -2,7 +2,7 @@ ARG REQUESTS_LAYER_REPOS_URI
 ARG REQUESTS_LAYER_IMAGE_TAG
 
 FROM ${REQUESTS_LAYER_REPOS_URI}:${REQUESTS_LAYER_IMAGE_TAG} AS requests-layer
-FROM public.ecr.aws/lambda/python:3.9 AS base
+FROM public.ecr.aws/lambda/python:3.12 AS base
 
 WORKDIR /opt
 COPY --from=requests-layer /opt/ .
